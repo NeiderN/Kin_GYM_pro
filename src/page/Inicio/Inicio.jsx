@@ -118,7 +118,6 @@ export default function Inicio() {
                     if (item.label === "Asistencia")    navigate("/asistencia");
                     if (item.label === "Reportes")      navigate("/reportes");
                     if (item.label === "Configuración") navigate("/configuracion");
-                    if (item.label ==="Usuarios") navigate("/usuarios");
                 }}
                 >
                 <span className="dash-nav-icon">{item.icon}</span>
