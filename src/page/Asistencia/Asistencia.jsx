@@ -19,6 +19,7 @@ const NAV_ITEMS = [
     { icon: "✅", label: "Asistencia"  },
   ]},
   { section: "ADMINISTRACIÓN", items: [
+    { icon: "👤", label: "Usuarios"      },
     { icon: "📊", label: "Reportes"      },
     { icon: "⚙️", label: "Configuración" },
   ]},
@@ -56,7 +57,7 @@ export default function Asistencia() {
       {/* ════ SIDEBAR ════ */}
       <aside className="asis-sidebar">
         <div className="asis-sidebar-brand">
-          <span className="asis-brand-name">GYMCONTROL</span>
+          <span className="asis-brand-name">KIN GYM</span>
           <span className="asis-brand-sub">PRO SYSTEM</span>
         </div>
 
@@ -75,6 +76,7 @@ export default function Asistencia() {
                     if (item.label === "Membresías")    navigate("/membresias");
                     if (item.label === "Pagos")         navigate("/pagos");
                     if (item.label === "Asistencia")    navigate("/asistencia");
+                    if (item.label === "Usuarios")      navigate("/usuarios");
                     if (item.label === "Reportes")      navigate("/reportes");
                     if (item.label === "Configuración") navigate("/configuracion");
                   }}

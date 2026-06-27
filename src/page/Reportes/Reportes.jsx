@@ -45,6 +45,7 @@ const NAV_ITEMS = [
     { icon: "✅", label: "Asistencia"  },
   ]},
   { section: "ADMINISTRACIÓN", items: [
+    { icon: "👤", label: "Usuarios"      },
     { icon: "📊", label: "Reportes"      },
     { icon: "⚙️", label: "Configuración" },
   ]},
@@ -100,7 +101,7 @@ export default function Reportes() {
       {/* ════ SIDEBAR ════ */}
       <aside className="rep-sidebar">
         <div className="rep-sidebar-brand">
-          <span className="rep-brand-name">GYMCONTROL</span>
+          <span className="rep-brand-name">KIN GYM</span>
           <span className="rep-brand-sub">PRO SYSTEM</span>
         </div>
 
@@ -120,6 +121,7 @@ export default function Reportes() {
                     if (item.label === "Pagos")         navigate("/pagos");
                     if (item.label === "Asistencia")    navigate("/asistencia");
                     if (item.label === "Reportes")      navigate("/reportes");
+                    if (item.label === "Usuarios")      navigate("/usuarios");
                     if (item.label === "Configuración") navigate("/configuracion");
                   }}
                 >

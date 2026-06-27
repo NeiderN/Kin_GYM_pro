@@ -139,7 +139,7 @@ export default function Usuarios() {
       {/* SIDEBAR COMPARTIDO */}
       <aside className="usr-sidebar">
         <div className="cli-sidebar-brand">
-          <span className="cli-brand-name">GYMCONTROL</span>
+          <span className="cli-brand-name">KIN GYM</span>
           <span className="cli-brand-sub">PRO SYSTEM</span>
         </div>
         <nav className="usr-nav">

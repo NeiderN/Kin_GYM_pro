@@ -33,6 +33,7 @@ const NAV_ITEMS = [
     { icon: "✅", label: "Asistencia" },
   ]},
   { section: "ADMINISTRACIÓN", items: [
+    { icon: "👤", label: "Usuarios"      },
     { icon: "📊", label: "Reportes"      },
     { icon: "⚙️", label: "Configuración" },
   ]},
@@ -59,7 +60,7 @@ export default function Pagos() {
       {/* ════ SIDEBAR ════ */}
       <aside className="pag-sidebar">
         <div className="pag-sidebar-brand">
-          <span className="pag-brand-name">GYMCONTROL</span>
+          <span className="pag-brand-name">KIN GYM</span>
           <span className="pag-brand-sub">PRO SYSTEM</span>
         </div>
 
@@ -79,6 +80,7 @@ export default function Pagos() {
                     if (item.label === "Pagos")         navigate("/pagos");
                     if (item.label === "Asistencia")    navigate("/asistencia");
                     if (item.label === "Reportes")      navigate("/reportes");
+                    if (item.label === "Usuarios")      navigate("/usuarios");
                     if (item.label === "Configuración") navigate("/configuracion");
                   }}
                 >

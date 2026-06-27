@@ -2,8 +2,24 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Configuracion.css";
 
+const NAV_ITEMS = [
+  { section: "PRINCIPAL", items: [
+    { icon: "◎",  label: "Inicio"      },
+    { icon: "👥", label: "Clientes"    },
+    { icon: "🟨", label: "Membresías"  },
+    { icon: "💳", label: "Pagos"       },
+    { icon: "✅", label: "Asistencia"  },
+  ]},
+  { section: "ADMINISTRACIÓN", items: [
+    { icon: "👤", label: "Usuarios"      },
+    { icon: "📊", label: "Reportes"      },
+    { icon: "⚙️", label: "Configuración" },
+  ]},
+];
+
 export default function Configuracion() {
   const navigate = useNavigate();
+  const [activeNav, setActiveNav] = useState("Configuración");
 
   // Estado unificado para todos los parámetros del sistema (Valores iniciales de producción)
   const [config, setConfig] = useState({
@@ -20,7 +36,6 @@ export default function Configuracion() {
     permitirRegistroManualRecepcion: true,
     notificacionesEmailAuto: true
   });
-
   const [saving, setSaving] = useState(false);
   const [saveStatus, setSaveStatus] = useState("");
 
@@ -52,20 +67,45 @@ export default function Configuracion() {
       {/* SIDEBAR REPLICADO (Mismo diseño exacto y estable de Clientes.jsx) */}
       <aside className="cfg-sidebar">
         <div className="cfg-sidebar-brand">
-          <span className="cfg-brand-name">GymControl<span className="cfg-brand-highlight">PRO</span></span>
+          <span className="cfg-brand-name">KIN GYM</span>
+          <span className="cfg-brand-sub">PRO SYSTEM</span>
         </div>
         <nav className="cfg-sidebar-menu">
-          <div className="cfg-menu-section">Principal</div>
-          <button className="cfg-nav-btn" onClick={() => navigate("/inicio")}>⬡ inicio</button>
-          <button className="cfg-nav-btn" onClick={() => navigate("/clientes")}>👥 Clientes</button>
-          <button className="cfg-nav-btn">🎫 Membresías</button>
-          <button className="cfg-nav-btn">💳 Pagos</button>
-
-          <div className="cfg-menu-section">Administración</div>
-          <button className="cfg-nav-btn" onClick={() => navigate("/usuarios")}>👤 Usuarios</button>
-          <button className="cfg-nav-btn">📊 Reportes</button>
-          <button className="cfg-nav-btn active">⚙️ Configuración</button>
+          {NAV_ITEMS.map((group) => (
+            <div key={group.section} className="cfg-nav-group">
+              <span className="cfg-menu-section">{group.section}</span>
+              {group.items.map((item) => (
+                <button
+                  key={item.label}
+                  className={`cfg-nav-btn ${activeNav === item.label ? "active" : ""}`}
+                  onClick={() => {
+                    setActiveNav(item.label);
+                    if (item.label === "Inicio")        navigate("/inicio");
+                    if (item.label === "Clientes")      navigate("/clientes");
+                    if (item.label === "Membresías")    navigate("/membresias");
+                    if (item.label === "Pagos")         navigate("/pagos");
+                    if (item.label === "Asistencia")    navigate("/asistencia");
+                    if (item.label === "Usuarios")      navigate("/usuarios");
+                    if (item.label === "Reportes")      navigate("/reportes");
+                    if (item.label === "Configuración") navigate("/configuracion");
+                  }}
+                >
+                  <span className="cfg-nav-icon">{item.icon}</span>
+                  {item.label}
+                </button>
+              ))}
+            </div>
+          ))}
         </nav>
+
+        <div className="cfg-sidebar-user">
+          <div className="cfg-avatar-sidebar">NN</div>
+          <div className="cfg-sidebar-user-info">
+            <span className="cfg-sidebar-user-name">Neider Nuñez</span>
+            <span className="cfg-sidebar-user-role">Administrador</span>
+          </div>
+          <button className="cfg-sidebar-user-menu">⋮</button>
+        </div>
       </aside>
 
       {/* CONTENIDO PRINCIPAL */}
@@ -75,12 +115,6 @@ export default function Configuracion() {
           <div className="cfg-topbar-left">
             <h1 className="cfg-page-title">Configuración del <span>Sistema</span></h1>
             <p className="cfg-page-subtitle">Módulo de control global de parámetros del gimnasio, reglas de negocio y pasarelas</p>
-          </div>
-          <div className="cfg-topbar-right">
-            <div className="cfg-user-badge">
-              <div className="cfg-avatar-mini" style={{ backgroundColor: "var(--color-accent)", color: "#0A0A0A" }}>AD</div>
-              <span className="cfg-user-role">Administrador General</span>
-            </div>
           </div>
         </header>
 

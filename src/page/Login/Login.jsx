@@ -7,7 +7,7 @@ import "./Login.css";
 const ROLES = [
   { label: "Admin",      icon: "👤", value: "admin",      email: "admin@gymcontrol.co"      },
   { label: "Recepción",  icon: "🏢", value: "recepcion",  email: "recepcion@gymcontrol.co"  },
-  { label: "Financiero", icon: "🔥", value: "financiero", email: "financiero@gymcontrol.co" },
+  { label: "Cliente", icon: "🔥", value: "cliente", email: "cliente@gymcontrol.co" },
   { label: "Entrenador", icon: "💪", value: "entrenador", email: "entrenador@gymcontrol.co" },
 ];
 
@@ -42,7 +42,7 @@ export default function Login() {
 
           <div className="login-left-content">
             <div>
-              <h1 className="login-brand-name">GYMCONTROL</h1>
+              <h1 className="login-brand-name">KIN GYM</h1>
               <p className="login-brand-sub">PRO&nbsp;&nbsp;SYSTEM&nbsp;&nbsp;v2.0</p>
             </div>
 
@@ -66,7 +66,7 @@ export default function Login() {
             </ul>
           </div>
 
-          <div className="login-watermark">GC</div>
+          <div className="login-watermark">KG</div>
         </div>
 
         {/* ── Panel derecho ── */}

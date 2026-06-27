@@ -24,6 +24,7 @@ const NAV_ITEMS = [
     { icon: "✅", label: "Asistencia" },
   ]},
   { section: "ADMINISTRACIÓN", items: [
+    { icon: "👤", label: "Usuarios"      },
     { icon: "📊", label: "Reportes"      },
     { icon: "⚙️", label: "Configuración" },
   ]},
@@ -51,7 +52,7 @@ export default function Membresias() {
       {/* ════ SIDEBAR ════ */}
       <aside className="mem-sidebar">
         <div className="mem-sidebar-brand">
-          <span className="mem-brand-name">GYMCONTROL</span>
+          <span className="mem-brand-name">KIN GYM</span>
           <span className="mem-brand-sub">PRO SYSTEM</span>
         </div>
 
@@ -71,6 +72,7 @@ export default function Membresias() {
                     if (item.label === "Pagos")         navigate("/pagos");
                     if (item.label === "Asistencia")    navigate("/asistencia");
                     if (item.label === "Reportes")      navigate("/reportes");
+                    if (item.label === "Usuarios")      navigate("/usuarios");
                     if (item.label === "Configuración") navigate("/configuracion");
                   }}
                 >

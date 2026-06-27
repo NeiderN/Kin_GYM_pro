@@ -97,7 +97,7 @@ export default function Inicio() {
       {/* ════ SIDEBAR ════ */}
       <aside className="dash-sidebar">
         <div className="dash-sidebar-brand">
-          <span className="dash-brand-name">GYMCONTROL</span>
+          <span className="dash-brand-name">KIN GYM</span>
           <span className="dash-brand-sub">PRO SYSTEM</span>
         </div>
 
